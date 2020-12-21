@@ -1,9 +1,258 @@
-@import url("https://fonts.googleapis.com/css?family=Karla:weight@400;700&display=swap");
+$primary-font: "Helvetica", sans-serif;
+$secondary-font: "Avenir", sans-serif;
+$primary-color: #212353;
+$secondary-color: #4B5D68;
 
-$font: "Karla", sans-serif;
-$primary-color: #3e6f9e;
-
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
 body {
-  font-family: $font;
-  color: $primary-color;
+    padding-top: 4.7rem;
+    max-width: 112rem;
+    margin: auto;
+}
+h1 {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 8.8rem;
+    padding: 0;
+    margin: 0;
+}
+h2 {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 5.2rem;
+    padding: 0;
+    margin: 0;
+}
+h3 {
+    color: $primary-color;
+    font-family: $primary-font;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.12rem;
+    padding: 0;
+    margin: 0;
+}
+p {
+    color: $secondary-color;
+    font-family: $secondary-font;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.88rem;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+.button {
+    font-family: $secondary-font;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+
+    &--demo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $primary-color;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+        width: 210px;
+        height: 60px;
+        padding-left: 2.9rem;
+        padding-right: 2.9rem;
+        font-weight: 800;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        letter-spacing: 0.005em;
+        margin-left: auto;
+    }
+    &--purple {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 1.8rem;
+        font-weight: 800;
+        line-height: 2.88rem;
+        background: #9C69E2;
+        width: 170px;
+        height: 60px;
+    }
+}
+.header {
+    min-height: 75.4rem;
+
+    &__image {
+        position: absolute;
+        margin-top: 28.6rem;
+        margin-left: 36.3rem;
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+    &__links {
+        display: flex;
+        font-family: $secondary-font;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        list-style-type: none;
+    }
+    &__link {
+        color: $secondary-color;
+        margin-right: 4rem;
+
+        &--is-active{
+            color: $primary-color;
+            font-weight: 800;
+        }
+    }
+    &__logo {
+        margin-right: 12.1rem;
+    }
+    &__text {
+        margin-top: 13rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 64.5rem;
+        min-height: 46.4rem;
+
+        &--paragraph {
+            max-width: 38rem;
+        }
+    }
+}
+.callout {
+    display: flex;
+    margin-top: 10.218rem;
+    background: rgba(240, 99, 184, 0.15);
+    border-radius: 5rem;
+    max-width: 111.7rem;
+    min-height: 56rem;
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 3.182rem;
+        margin-left: 1.1rem;
+        width: 47.7rem;
+        height: 50.4rem;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 47.5rem;
+        height: 31rem;
+        margin-left: 6.2rem;
+        margin-right: 9.2rem;
+        margin-top: 12.5rem;
+        margin-bottom: 12.5rem;
+    }
+}
+.feature {
+    margin-top: 14.982rem;
+    max-width: 112rem;
+    min-height: 102.6rem;
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+        max-width: 58.4rem;
+        min-height: 16rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: center;
+        text-align: center;
+    }
+    &__blocks {
+        margin-top: 10rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        height: 35.8rem;
+        margin-bottom: 5rem;
+        background-repeat: no-repeat;
+        background-position: right;
+
+        &--search-data {
+            background-image: url('./images/seach_data_background.png');
+            width: 53.129rem;
+        }
+        &--anytime-access {
+            background-image: url('./images/24_hour_access_background.png');
+            width: 54.428rem;
+        }
+        &--print-out {
+            background-image: url('./images/print_out_background.png');
+            width: 55.028rem;
+        }
+        &--security-code {
+            background-image: url('./images/security_code_background.png');
+            width: 53.928rem;
+        }
+    }
+    &__image {
+        position: relative;
+        
+        &--search-data {
+            top: 7.3rem;
+        }
+        &--anytime-access {
+            top: 7.1rem;
+        }
+        &--print-out {
+            top: 12.3rem;
+        }
+        &--security-code {
+            top: 8.6rem;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 4.9rem;
+        margin-right: 5rem;
+        margin-bottom: 3.3rem;
+        width: 22rem;
+
+        &--description {
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 2.56rem;
+        }
+    }
+    &__cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 12.7rem;
+        height: 2.6rem;
+        font-family: $secondary-font;
+        color: $primary-color;
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 2.6rem;
+        letter-spacing: .005rem;
+    }
 }
