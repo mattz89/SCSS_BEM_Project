@@ -474,7 +474,6 @@ a {
         line-height: 2.88rem;
         letter-spacing: 0.01rem;
         margin-top: 1rem;
-        margin-bottom: 114px;
     }
     &__header {
         font-family: $secondary-font;
@@ -506,12 +505,14 @@ a {
         margin-top: 1rem;
         margin-left: 5rem;
         width: 16.6rem;
+        margin-bottom: 8.9rem;
     }
     &__social {
         height: 11rem;
         width: 17.8rem;
         margin-top: 1rem;
         margin-left: 5rem;
+        margin-right: 3.2rem;
     }
     &__social-icons {
         display: flex;
