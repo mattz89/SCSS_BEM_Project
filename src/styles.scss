@@ -6,8 +6,12 @@ $secondary-color: #4B5D68;
 
 // Media Query Vars
 $small: 30em; // 480px
+$small-1: 33.4em;// 534px
 $small-2: 37.5em; // 600px
 $medium: 47.5em; // 760px
+$medium-1: 53.75em; // 860px
+$medium-2: 60em; // 960px
+$medium-3: 67em; // 1072px
 $large: 72em; // 1152px
 
 *, *::before, *::after {
@@ -37,12 +41,6 @@ body {
         padding-right: .2rem;
     }
 }
-// Hide horizontal scroll on ios
-.mobile__wrapper {
-    position: relative;
-    overflow-x: hidden;
-    width: 100vw;
-}
 h1 {
     color: $primary-color;
     font-family: $primary-font;
@@ -52,7 +50,7 @@ h1 {
     padding: 0;
     margin: 0;
 
-    @media only screen and (max-width: $small-2) {
+    @media only screen and (max-width: $small-1) {
         font-size: 6rem;
         line-height: 6.6rem;
     }
@@ -141,24 +139,20 @@ a {
 .header {
     min-height: 75.4rem;
 
+    @media only screen and (max-width: $small-2) {
+        min-height: auto;
+    }
+
     &__image {
         position: absolute;
         margin-top: 28.6rem;
         margin-left: 36.3rem;
 
         @media only screen and (max-width: $small-2) {
-            margin-top: 30rem;
-            margin-left: 12rem;
-            opacity: .5;
-            z-index: -10;
-        }
-        @media only screen and (max-width: $small) {
-            margin-top: 40rem;
-            margin-left: 0;
-            opacity: .5;
-            z-index: -10;
+            display: none;
         }
     }
+    // start with medium 1 MQ
     &__nav {
         display: flex;
         align-items: center;
@@ -195,7 +189,6 @@ a {
 
         @media only screen and (max-width: $small-2) {
             margin-top: 5rem;
-            min-height: 35rem;
             max-width: 76.8rem;
         }
         @media only screen and (max-width: $small) {
@@ -288,6 +281,10 @@ a {
         justify-content: space-between;
         flex-wrap: wrap;
 
+        @media only screen and (max-width: $large) {
+            justify-content: center;
+        }
+
         &__block {
             display: flex;
             justify-content: space-between;
@@ -372,16 +369,43 @@ a {
     background-color: #9C69E2;
     border-radius: 5rem;
     max-width: 111.8rem;
-    height: 70.9rem;
+    max-height: 70.9rem;
     padding-top: 10.9rem;
     padding-left: 9.3rem;
+    padding-bottom: 5.8rem;
+
+    @media only screen and (max-width: $large) {
+        padding-top: 5.8rem;
+    }
+    @media only screen and (max-width: $medium) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    @media only screen and (max-width: $small) {
+        padding-left: 0;
+    }
 
     &__header {
         color: #FFFFFF;
+
+        @media only screen and (max-width: $small) {
+            text-align: center;
+        }
     }
     &__cards {
         margin-top: 8.8rem;
         display: flex;
+
+        @media only screen and (max-width: $large) {
+            justify-content: center;
+            padding-right: 7.3rem;
+            margin-top: 5rem;
+        }
+
+        @media only screen and (max-width: $small) {
+            margin-top: 3rem;
+            padding-right: 0;
+        }
 
         &__card {
             display: flex;
@@ -391,6 +415,17 @@ a {
             margin-right: 2rem;
             background: #FFFFFF;
             box-shadow: 0rem 2rem 0rem #8a56da;
+
+            @media only screen and (max-width: $medium) {
+                width: 50rem;
+                margin-right: 0;
+            }
+            @media only screen and (max-width: $small-2) {
+                width: 40rem;
+            }
+            @media only screen and (max-width: $small) {
+                width: 33rem;
+            }
     
             &--next {
                 position: relative;
@@ -400,6 +435,10 @@ a {
                 box-shadow: 0rem 2rem 0rem #9863e0;
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
+
+                @media only screen and (max-width: $large) {
+                    display: none;
+                }
     
                 &::after {
                     position: absolute;
@@ -417,6 +456,11 @@ a {
                 border-radius: 50%;
                 width: 9rem;
                 height: 9rem;
+
+                @media only screen and (max-width: $medium) {
+                    margin-top: 3rem;
+                    margin-left: 3.5rem;
+                }
         
                 &--next {
                     margin-left: 4rem;
@@ -433,7 +477,17 @@ a {
                 margin-left: 3rem;
                 margin-bottom: 5rem;
                 margin-right: 7rem;
-                
+
+                @media only screen and (max-width: $medium) {
+                    margin-top: 4rem;
+                    margin-right: 3.5rem;
+                }
+                @media only screen and (max-width: $small) {
+                    margin-top: 4rem;
+                    margin-right: 3.5rem;
+                    max-height: 22rem;
+                    overflow: hidden;
+                }
                 &--next {
                     width: 18rem;
                     height: 20rem;
@@ -473,6 +527,11 @@ a {
         justify-content: space-between;
         margin-top: 6rem;
         margin-right: 7.6rem;
+
+        @media only screen and (max-width: $small) {
+            margin-right: 4rem;
+            margin-left: 4rem;
+        }
         
         &__slider {
             display: flex;
@@ -521,8 +580,12 @@ a {
         justify-content: space-between;
         position: relative;
         align-items: center;
-        flex-wrap: wrap;
         top: 10rem;
+
+        @media only screen and (max-width: $medium-2) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
         &__hook {
             display: flex;
@@ -530,25 +593,52 @@ a {
             justify-content: space-between;
             width: 58.4rem;
             height: 10.1rem;
+
+            @media only screen and (max-width: $medium-2) {
+                text-align: center;
+            }
         }
         &__buttons {
             display: flex;
             justify-content: space-between;
             width: 41rem;
             height: 6rem;
+
+            @media only screen and (max-width: $medium-2) {
+                margin-top: 3rem;
+            }
         }
     }
     &__map {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        flex-wrap: wrap;
         margin-top: 25rem;
+
+        @media only screen and (max-width: $medium-1) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
         &__company {
             display: flex;
             flex-direction: column;
             
+            @media only screen and (max-width: $small-2) {
+                align-items: center;
+            }
+            
+            &__icons {
+                visibility: hidden;
+                width: 17.8rem;
+                margin-top: 3rem;
+                display: flex;
+                justify-content: space-between;
+
+                @media only screen and (max-width: $small-2) {
+                    visibility: visible;
+                }
+            }
             &__identity {
                 display: flex;
                 align-items: center;
@@ -570,6 +660,11 @@ a {
                 line-height: 2.88rem;
                 letter-spacing: 0.01rem;
                 margin-top: 6.5rem;
+
+                @media only screen and (max-width: $medium-1) {
+                    display: none;
+                    text-align: center;
+                }
             }
             &__contact {
                 font-family: $secondary-font;
@@ -579,11 +674,22 @@ a {
                 line-height: 2.88rem;
                 letter-spacing: 0.01rem;
                 margin-top: 1rem;
+
+                @media only screen and (max-width: $medium-1) {
+                    display: none;
+                    text-align: center;
+                }
             }
         }
         &__links {
             display: flex;
-            flex-wrap: wrap;
+
+            @media only screen and (max-width: $medium-1) {
+                flex-wrap: wrap;
+                margin-top: 5rem;
+                width: 100vw;
+                justify-content: center;
+            }
     
             &__header {
                 font-family: $secondary-font;
@@ -604,6 +710,7 @@ a {
                 list-style-type: none;
                 padding-left: 0;
                 margin-top: 1rem;
+                margin-left: 5rem;
                 width: 16.6rem;
             }
             &__help {
@@ -612,6 +719,13 @@ a {
                 margin-top: 1rem;
                 margin-left: 5rem;
                 width: 16.6rem;
+
+                @media only screen and (max-width: $medium-3) {
+                    margin-left: 0rem;
+                }
+                @media only screen and (max-width: $medium-1) {
+                    width: 11.6rem;
+                }
             }
             &__social {
                 height: 11rem;
@@ -619,6 +733,13 @@ a {
                 margin-top: 1rem;
                 margin-left: 5rem;
                 margin-right: 3.2rem;
+
+                @media only screen and (max-width: $medium-3) {
+                    margin-left: 0rem;
+                }
+                @media only screen and (max-width: $small-2) {
+                    display: none;
+                }
         
                 &__icons {
                     display: flex;
