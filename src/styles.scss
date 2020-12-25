@@ -135,6 +135,20 @@ a {
         width: 17rem;
         height: 6rem;
     }
+    &--hide {
+
+        @media only screen and (max-width: $medium-1) {
+            display: none;
+        }
+    }
+    &--show {
+        display: none;
+
+        @media only screen and (max-width: $medium-1) {
+            display: flex;
+            margin-top: 4rem;
+        }
+    }
 }
 .header {
     min-height: 75.4rem;
@@ -152,10 +166,17 @@ a {
             display: none;
         }
     }
-    // start with medium 1 MQ
     &__nav {
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: $medium-1) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @media only screen and (max-width: $small) {
+            padding-left: 1.8rem;
+        }
 
         &__logo {
             margin-right: 12.1rem;
@@ -168,14 +189,53 @@ a {
             line-height: 2.6rem;
             list-style-type: none;
 
+            @media only screen and (max-width: $medium-1) {
+                display: none;
+                position: absolute;
+                flex-direction: column;
+                align-items: center;
+                top: 6rem;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                font-size: 3rem;
+                line-height: 6rem;
+                background-color: #FFFFFF;
+                z-index: 20;
+            }
+
+            &.active {
+                display: flex;
+            }
+
             &__link {
                 color: $secondary-color;
                 margin-right: 4rem;
+
+                &:hover {
+                    color: $primary-color;
+                }
         
                 &--is-active{
                     color: $primary-color;
                     font-weight: 800;
                 }
+            }
+        }
+        &__toggle {
+            position: absolute;
+            top: 2rem;
+            right: 5rem;
+            margin-left: auto;
+            font-size: 4rem;
+            color: $primary-color;
+            display: none;
+
+            @media only screen and (max-width: $medium-1) {
+                display: flex;
+            }
+            @media only screen and (max-width: $medium) {
+                right: 2.2rem;
             }
         }
     }
@@ -212,6 +272,7 @@ a {
     border-radius: 5rem;
     max-width: 111.7rem;
     max-height: 100rem;
+    overflow: hidden;
 
     @media only screen and (max-width: $small-2) {
         padding-left: 5rem;

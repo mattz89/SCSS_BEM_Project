@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <title>Clickup Site</title>
 </head>
 <body>
@@ -20,8 +21,16 @@
                 <a href="#"><li class="header__nav__links__link">Help</li></a>
                 <a href="#"><li class="header__nav__links__link">Features</li></a>
                 <a href="#"><li class="header__nav__links__link">Signup</li></a>
+                <li class="header__nav__links__link">
+                    <button onclick="window.location.href='#';" class="button button--demo button--show">
+                        Request Demo <img src="./images/right_arrow_button.svg" alt="right arrow icon">
+                    </button>
+                </li>
             </ul>
-            <button onclick="window.location.href='#';" class="button button--demo">
+            <div class="header__nav__toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <button onclick="window.location.href='#';" class="button button--demo button--hide">
                 Request Demo <img src="./images/right_arrow_button.svg" alt="right arrow icon">
             </button>
         </div>
